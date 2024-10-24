@@ -52,9 +52,9 @@ router.post('/submit', authMiddleware, async (req, res) => {
                 user.completedTests.push({ skill, difficulty });
                 await user.save();
             }
-            res.status(200).json({ message: 'Test completed and saved!', result });
+            res.status(200).json({ success: true, message: 'Test completed and saved!', result });
         } else {
-            res.status(200).json({ message: 'Test failed. Try again.', result });
+            res.status(200).json({ success: false, message: 'Test failed. Try again.', result });
         }
     } catch (error) {
         console.error('Error in submit route:', error);

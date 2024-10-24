@@ -1,0 +1,11 @@
+{
+    "name": "Proof of Skill - React.js",
+    "description": "Congratulations on mastering React.js by completing all three difficulty levels: Easy, Medium, and Hard!",
+    "image": "https://res.cloudinary.com/du6vmyvdh/image/upload/v1729785641/Blockchain/React_bixl6l.png",
+    "attributes": [
+        { "trait_type": "Skill", "value": "React.js" },
+        { "trait_type": "Difficulty", "value": "Completed" },
+        { "trait_type": "Levels Completed", "value": "Easy, Medium, Hard" }
+    ],
+    "format": "image/png"
+}

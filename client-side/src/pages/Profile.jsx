@@ -118,8 +118,8 @@ const Profile = () => {
                             </>
                         )}
                     </div>
-                </div>;
-            </div>;
+                </div>
+            </div>
             <div className='btn-section'>
                 <button className="logout-button" onClick={handleLogout}>
                     Logout

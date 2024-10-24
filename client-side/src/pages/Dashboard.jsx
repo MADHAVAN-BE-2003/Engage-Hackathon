@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Contract, ethers, BrowserProvider } from 'ethers';
+import Abi from './../contract/ProofOfSkill.json';
 import './../styles/Dashboard.css';
 
 const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
-const ProofOfSkillABI = [];
+const ProofOfSkillABI = Abi.abi;
 
 const Dashboard = () => {
     const navigate = useNavigate();

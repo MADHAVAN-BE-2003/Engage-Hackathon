@@ -1,0 +1,11 @@
+{
+    "name": "Proof of Skill - Node.js",
+    "description": "Congratulations on mastering Node.js by completing all three difficulty levels: Easy, Medium, and Hard!",
+    "image": "https://res.cloudinary.com/du6vmyvdh/image/upload/v1729785622/Blockchain/Node_isygke.png",
+    "attributes": [
+        { "trait_type": "Skill", "value": "Node.js" },
+        { "trait_type": "Difficulty", "value": "Completed" },
+        { "trait_type": "Levels Completed", "value": "Easy, Medium, Hard" }
+    ],
+    "format": "image/png"
+}

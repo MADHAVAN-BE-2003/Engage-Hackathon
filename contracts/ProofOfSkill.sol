@@ -10,7 +10,6 @@ contract ProofOfSkill is ERC721URIStorage, Ownable {
 
     struct Skill {
         string skillName;
-        string difficulty;
     }
 
     mapping(uint256 => Skill) public tokenIdToSkill;
@@ -20,18 +19,21 @@ contract ProofOfSkill is ERC721URIStorage, Ownable {
         mintingFee = _mintingFee;
     }
 
-    function mintSkillNFT(address recipient, string memory skillName, string memory difficulty, string memory tokenURI) public payable {
+    function mintSkillNFT(address recipient, string memory skillName, string memory tokenURI) public payable {
         require(bytes(skillName).length > 0, "Skill name cannot be empty");
-        require(bytes(difficulty).length > 0, "Difficulty cannot be empty");
-
         require(msg.value >= mintingFee, "Not enough ETH to mint the NFT");
-
+        
         uint256 newItemId = tokenCounter;
         _safeMint(recipient, newItemId);
         _setTokenURI(newItemId, tokenURI);
-        tokenIdToSkill[newItemId] = Skill(skillName, difficulty);
+        tokenIdToSkill[newItemId] = Skill(skillName);
         tokenCounter += 1;
+        
+        emit MintedNFT(recipient, newItemId, msg.value);
     }
+        
+    event MintedNFT(address indexed recipient, uint256 indexed tokenId, uint256 value);
+
 
     function withdraw() public onlyOwner {
         uint256 balance = address(this).balance;
@@ -39,8 +41,8 @@ contract ProofOfSkill is ERC721URIStorage, Ownable {
         payable(owner()).transfer(balance);
     }
 
-    function getSkillDetails(uint256 tokenId) public view returns (string memory skillName, string memory difficulty) {
+    function getSkillDetails(uint256 tokenId) public view returns (string memory skillName) {
         Skill memory skill = tokenIdToSkill[tokenId];
-        return (skill.skillName, skill.difficulty);
+        return skill.skillName;
     }
 }
