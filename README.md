@@ -42,8 +42,8 @@ To set up the project on your local machine, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/decProofOfSkillPortfolio.git
-   cd decProofOfSkillPortfolio
+   git clone https://github.com/MADHAVAN-BE-2003/Engage-Hackathon.git
+   cd Engage-Hackathon
    ```
 
 2. Open a terminal and run the following command to compile, deploy, and test the smart contract and install dependencies for both server-side and client-side:
@@ -124,11 +124,11 @@ Certainly! Here’s the new section for your README file, which includes links f
 
 ### Tutorial Video
 
-For a step-by-step tutorial on setting up and using the Decentralized Proof-of-Skill Portfolio, check out our YouTube video: [Watch Tutorial](https://youtu.be/h4pxoBYk14I).
+For a step-by-step tutorial on setting up and using the Decentralized Proof-of-Skill Portfolio, check out our YouTube video: [Watch Tutorial](https://youtu.be/h4pxoBYk14I) _(opens in a new tab)_.
 
 ### Project on Devfolio
 
-You can find more information about the Decentralized Proof-of-Skill Portfolio on our Devfolio project page: [View Project](https://devfolio.co/projects/decentralized-proofofskill-portfolio-3e76).
+You can find more information about the Decentralized Proof-of-Skill Portfolio on our Devfolio project page: [View Project](https://devfolio.co/projects/decentralized-proofofskill-portfolio-3e76) _(opens in a new tab)_.
 
 ## License
 
