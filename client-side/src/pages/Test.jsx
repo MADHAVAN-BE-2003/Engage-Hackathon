@@ -3,10 +3,10 @@ import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './../styles/Test.css';
 import Web3 from 'web3';
-import Abi from './../contract/ProofOfSkill.json';
+import Artifacts from './../contract/ProofOfSkill.json';
 
-const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
-const ProofOfSkillABI = Abi.abi;
+const contractAddress = Artifacts.networks[5777].address;
+const ProofOfSkillABI = Artifacts.abi;
 
 const Test = () => {
     const location = useLocation();
@@ -44,28 +44,6 @@ const Test = () => {
         fetchQuestion();
     }, [skill, difficulty]);
 
-    const handleMintNFT = async (skill, difficulty, tokenURI) => {
-        try {
-            const token = localStorage.getItem('token'); // Retrieve the token
-            const response = await axios.post(
-                'http://localhost:5000/api/nft/mint',
-                {
-                    skillName: skill,
-                    tokenURI
-                },
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}` // Include token in headers
-                    }
-                }
-            );
-
-            console.log('NFT Minted:', response.data);
-        } catch (error) {
-            console.error('Error minting NFT:', error);
-        }
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('token');
@@ -79,9 +57,6 @@ const Test = () => {
             );
 
             console.log(`API response time: ${Date.now() - startTime} ms`);
-            console.log(ProofOfSkillABI);
-            console.log(contractAddress);
-
             setResult(response.data.result);
             setResponse(response.data.success);
 
@@ -96,8 +71,7 @@ const Test = () => {
                 const hasCompletedAllDifficulties = allDifficulties.every(diff => difficultiesCompleted.includes(diff));
 
                 if (hasCompletedAllDifficulties) {
-                    console.log("log");
-                    await mintNFT();
+                    await mintNFT(skill); // Call mintNFT with skill
                 } else {
                     alert('Complete all three difficulty levels (Easy, Medium, Hard) to mint the NFT.');
                 }
@@ -116,13 +90,13 @@ const Test = () => {
         }
     };
 
-    const mintNFT = async () => {
+    const mintNFT = async (skill) => {
         if (typeof window.ethereum !== 'undefined') {
             window.web3 = new Web3(window.ethereum);
         } else {
             alert('MetaMask is required to use this feature.');
+            return;
         }
-
 
         try {
             const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -139,13 +113,10 @@ const Test = () => {
 
             // Mint the NFT using Web3 and MetaMask
             const contract = new window.web3.eth.Contract(ProofOfSkillABI, contractAddress);
-            const mintResponse = await contract.methods.mintSkillNFT(userAddress, skill, 'Completed', tokenURI)
+            const mintResponse = await contract.methods.mintSkillNFT(userAddress, skill, tokenURI)
                 .send({ from: userAddress, value: valueInWei });
 
             console.log('NFT Minted:', mintResponse);
-
-            console.log('NFT Minted:', mintResponse);
-            await handleMintNFT(skill, 'Completed', tokenURI);
             alert('NFT successfully minted for completing all difficulty levels of ' + skill + '!');
         } catch (error) {
             handleError(error); // Handle specific errors
@@ -162,9 +133,6 @@ const Test = () => {
         }
         console.error('Error:', error);
     };
-
-
-
 
     return (
         <div className="test">
@@ -187,10 +155,8 @@ const Test = () => {
                             Result: {result}
                         </h4>
                     )}
-
                 </div>
             </form>
-
         </div>
     );
 };

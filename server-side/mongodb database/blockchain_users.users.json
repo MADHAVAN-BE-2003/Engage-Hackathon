@@ -1,0 +1,88 @@
+[{
+  "_id": {
+    "$oid": "671a722c669236b44b493aba"
+  },
+  "user": "Raja V",
+  "email": "owner@gmail.com",
+  "password": "$2b$10$Tb1URl4tC5veQqnlmW7oB.mi1XSIaiAGcxqSoG2ustSK.7aNnE1Ky",
+  "role": "owner",
+  "completedTests": []
+},
+{
+  "_id": {
+    "$oid": "671a75ec669236b44b493abe"
+  },
+  "user": "Madhavan V",
+  "email": "user@gmail.com",
+  "password": "$2b$10$Tb1URl4tC5veQqnlmW7oB.mi1XSIaiAGcxqSoG2ustSK.7aNnE1Ky",
+  "role": "user",
+  "completedTests": [
+    {
+      "skill": "React.js",
+      "difficulty": "Easy",
+      "_id": {
+        "$oid": "671be63d6bc0b43607421fe4"
+      }
+    },
+    {
+      "skill": "React.js",
+      "difficulty": "Medium",
+      "_id": {
+        "$oid": "671be6516bc0b43607421fe8"
+      }
+    },
+    {
+      "skill": "Node.js",
+      "difficulty": "Easy",
+      "_id": {
+        "$oid": "671be6af6bc0b43607421ff3"
+      }
+    },
+    {
+      "skill": "Node.js",
+      "difficulty": "Medium",
+      "_id": {
+        "$oid": "671be6c46bc0b43607421ffa"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "671bf839dffbd144de640800"
+  },
+  "user": "Madhavan V",
+  "email": "user1@gmail.com",
+  "password": "$2b$10$Tb1URl4tC5veQqnlmW7oB.mi1XSIaiAGcxqSoG2ustSK.7aNnE1Ky",
+  "role": "user",
+  "completedTests": [
+    {
+      "skill": "React.js",
+      "difficulty": "Easy",
+      "_id": {
+        "$oid": "671be63d6bc0b43607421fe4"
+      }
+    },
+    {
+      "skill": "React.js",
+      "difficulty": "Medium",
+      "_id": {
+        "$oid": "671be6516bc0b43607421fe8"
+      }
+    },
+    {
+      "skill": "Node.js",
+      "difficulty": "Easy",
+      "_id": {
+        "$oid": "671be6af6bc0b43607421ff3"
+      }
+    },
+    {
+      "skill": "Node.js",
+      "difficulty": "Medium",
+      "_id": {
+        "$oid": "671be6c46bc0b43607421ffa"
+      }
+    }
+  ]
+}]

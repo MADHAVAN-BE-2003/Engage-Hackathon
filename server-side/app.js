@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const questionsRoutes = require('./routes/test');
-const nftRoutes = require('./routes/nftRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -20,8 +19,6 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 app.use('/api/auth', authRoutes);
 
 app.use('/api/test', questionsRoutes);
-
-app.use('/api/nft', nftRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Contract, ethers, BrowserProvider } from 'ethers';
-import Abi from './../contract/ProofOfSkill.json';
+import Artifacts from './../contract/ProofOfSkill.json';
 import './../styles/Dashboard.css';
 
-const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
-const ProofOfSkillABI = Abi.abi;
+const contractAddress = Artifacts.networks[5777].address;
+const ProofOfSkillABI = Artifacts.abi;
 
 const Dashboard = () => {
     const navigate = useNavigate();
@@ -98,11 +98,6 @@ const Dashboard = () => {
             }
         }
     };
-
-
-
-
-
 
     return (
         <div className="dashboard">
