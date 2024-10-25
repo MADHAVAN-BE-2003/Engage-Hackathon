@@ -124,7 +124,7 @@ Certainly! Here’s the new section for your README file, which includes links f
 
 ### Tutorial Video
 
-For a step-by-step tutorial on setting up and using the Decentralized Proof-of-Skill Portfolio, check out our YouTube video: [Watch Tutorial](https://youtu.be/h4pxoBYk14I) _(opens in a new tab)_.
+For a step-by-step tutorial on setting up and using the Decentralized Proof-of-Skill Portfolio, check out our YouTube video: [Watch Tutorial](https://youtu.be/Ah10HO1CMcs) _(opens in a new tab)_.
 
 ### Project on Devfolio
 
