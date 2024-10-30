@@ -1,0 +1,26 @@
+React.js Answers:
+
+Easy:
+JSX is a syntax extension for JavaScript that looks similar to XML or HTML and is used with React to describe UI structure.
+
+
+Medium:
+The React component lifecycle consists of phases: Mounting, Updating, and Unmounting. Each phase has methods like componentDidMount, shouldComponentUpdate, and componentWillUnmount.
+
+
+Hard:
+State in React is managed using useState for local state and useContext or libraries like Redux for global state management.
+
+
+Node.js Answers:
+
+Easy:
+Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine that allows you to execute JavaScript code server-side.
+
+
+Medium:
+Middleware in Node.js refers to functions that have access to the request, response, and the next middleware function in the application's request-response cycle, often used for logging, authentication, and error handling.
+
+
+Hard:
+In Node.js, event-driven programming is a paradigm where the flow of the program is determined by events such as user actions or messages from other programs. Node.js uses an event loop to handle asynchronous operations efficiently.
